@@ -19,7 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
-
+function first(arr){
+  return arr[0];
+}
 
 ////////// PROBLEM 2 //////////
 
@@ -34,8 +36,10 @@ var arr = [40,50,60];
 
 //Code Here
 
+function last(arr){
+  return arr[(arr.length - 1)];
 
-
+}
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -48,7 +52,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
+function looper(family){
+  for (var i = 0; i < family.length; i++){
+    alert(family[i]);
+  }
 
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -61,9 +70,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Write a function called reversedLooper that is given letters as it's only argument. 
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
-
+var letters2 = [];
 //Code Here
-
+function reversedLooper(letters){
+  for (var i = (letters.length -1); i >= 0; i--){
+      alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,6 +91,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
+function evenFinder(nums){
+  var evens = [];
+  for (var i = 0; i < nums.length; i++){
+      if (nums[i] % 2 == 0){
+        evens.push(nums[i])
+      }
+  }
+  return evens;
+}
 
 
 
@@ -107,6 +129,21 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  var masterArray = [];
+  var evens = [];
+  var odds = [];
+  for (var i = 0; i < numbersArray.length; i++){
+    if (numbersArray[i] % 2 == 0){
+      evens.push(numbersArray[i]);
+    }
+    else {
+      odds.push(numbersArray[i]);
+    }
+  }
+  masterArray = [evens, odds];
+  return masterArray;
+}
 
 
 
@@ -129,7 +166,15 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  var randomNumber = getRandomArbitrary();
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] == randomNumber){
+      return true;
+    }
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,8 +203,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  if (!myGroceryList || !item){
+    return [];
+  }
+  for (var i = 0; i < myGroceryList.length; i++){
+    if (myGroceryList[i] == item){
+        myGroceryList.splice(i, 1);
+       
+    }
+  }
+  return myGroceryList;
+}
 
-
+function addItem(myGroceryList, item){
+  if (!myGroceryList || !item){
+    return [];
+  }
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 ////////// PROBLEM 9 //////////
 
@@ -169,7 +232,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Code Here
 
-
+function maker(){
+  var arr = [];
+  for (var i = 1; i <= 215; i++){
+    arr.push(i);
+  }
+  return arr;
+}
 
 ////////// PROBLEM 10 //////////
 
@@ -184,6 +253,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+function addTen(numbers){
+  var newArr =[]
+  for (var i = 0; i < numbers.length; i++){
+    var toInt = parseInt(numbers[i])
+    var x = toInt + 10;
+    newArr.push(x);
+  }
+  return newArr;
+}
 
 
 
@@ -209,7 +287,18 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function longer(arr1, arr2){
+  if (arr1.length > arr2.length){
+    return arr1;
+  }
+  if (arr2.length > arr1.length){
+    return arr2;
+  }
+  else {
+    return arr1;
+  }
 
+}
 
 
 /*
@@ -221,7 +310,27 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+var arr1 = [1,2,3,4];
+var arr2 = [2,4,5,6];
+function both(arr1, arr2){
+  var newArr = [];
+  var long = longer(arr1, arr2);
+  var short;
+  if (arr1 == long){
+    short = arr2;
+  }
+  else {
+    short = arr1;
+  }
+  for (var i = 0; i < long.length; i++){
+    for (var j = 0; j < short.length; j++){
+      if (short[j] == long[i]){
+        newArr.push(short[j]);
+      }
+    }
+  }
+  return newArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -262,7 +371,8 @@ var colt = {
 */
 
 //Code Here
-
+devMountainEmployees = [joe, cahlan, ryan, colt];
+console.log(devMountainEmployees.length)
 
 
 /*
@@ -271,7 +381,11 @@ var colt = {
 */
 
 //Code Here
-
+for (var i = 0; i < devMountainEmployees.length; i++){
+  if (devMountainEmployees[i].name == "Cahlan"){
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 
 ////////// PROBLEM 13 //////////
@@ -284,7 +398,7 @@ var colt = {
 
 //Code Here
 
-
+var users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
@@ -304,7 +418,19 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+var user2 = {
+  name: "Kyle",
+  email: "someemail",
+  password: "password",
+  username: "kyle"
+}
+var user3 = {
+  name: "yle",
+  email: "someemai",
+  password: "passwor",
+  username: "yle"
+}
+users = [user1, user2, user3];
 
 
 /*
@@ -318,9 +444,13 @@ var user1 = {
 */
 
 //Code Here
+for (var i = 0; i < users.length; i++){
+  if (users[i].name.includes("Mark") == true){
+    users.splice(i, 1);
+  }
+}
 
-
-
+users
 /*
   The activity we just did is very much how data works in 'the real world'.
 */
