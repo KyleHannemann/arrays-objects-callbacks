@@ -21,6 +21,7 @@
 */
 
 ////////// PROBLEM 1 //////////
+//test for git
 
 /*
   Write a function called first that takes in two parameters, an array and a callback function.
